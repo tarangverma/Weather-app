@@ -8,12 +8,12 @@
 .img {
    justify-content: center;
    position: relative;
-   left: 600px;
+   left: 350px;
 }
 
 .input {
     position: relative;
-    left: 600px;
+    left: 200px;
     font-family: 'Ubuntu', sans-serif;
     font-size: 40px;
 }
