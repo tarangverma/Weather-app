@@ -9,25 +9,25 @@ import { Forecast } from './Components/forecast/forecast';
 
 function App() {
 
-const [currentWeather , setCurrentWeather] = useState(null);
-  const [WeatherForcast , setWeatherForcast] = useState(null);
+  const [currentWeather, setCurrentWeather] = useState(null);
+  const [WeatherForcast, setWeatherForcast] = useState(null);
 
   const handelSearchChange = (searchData) => {
-      const [lat , lon] = searchData.value.split(" ");
+    const [lat, lon] = searchData.value.split(" ");
 
-      const CurrentWeatherFetch = fetch(`${WEATHER_API_URL}/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`);
+    const CurrentWeatherFetch = fetch(`${WEATHER_API_URL}/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`);
 
-      const WeatherForcast = fetch(`${WEATHER_API_URL}/forecast?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`);
+    const WeatherForcast = fetch(`${WEATHER_API_URL}/forecast?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`);
 
-     Promise.all([CurrentWeatherFetch , WeatherForcast])
-       .then(async (response) => {
-         const WeatherResponse = await response[0].json();
-         const forecastResponse = await response[1].json();
+    Promise.all([CurrentWeatherFetch, WeatherForcast])
+      .then(async (response) => {
+        const WeatherResponse = await response[0].json();
+        const forecastResponse = await response[1].json();
 
-         setCurrentWeather({city: searchData.label , ...WeatherResponse});
-         setWeatherForcast({city: searchData.label , ...forecastResponse});
-       })
-       .catch((err) => console.log(err));
+        setCurrentWeather({ city: searchData.label, ...WeatherResponse });
+        setWeatherForcast({ city: searchData.label, ...forecastResponse });
+      })
+      .catch((err) => console.log(err));
 
   }
 
@@ -37,10 +37,10 @@ const [currentWeather , setCurrentWeather] = useState(null);
   return (
     <div className='container'>
       <Header />
-      <Search onSearchChange={handelSearchChange}/>
+      <Search onSearchChange={handelSearchChange} />
       {currentWeather && <CurrentWeather data={currentWeather} />}
       {WeatherForcast && <Forecast data={WeatherForcast} />}
-    </div> 
+    </div>
   )
 }
 
