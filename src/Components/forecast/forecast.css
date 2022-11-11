@@ -26,4 +26,36 @@
 }
 .description {
    flex: 1 1;
+   margin-right: 15px;
+   text-align: right;
+}
+
+.min-max {
+    color: #757575;
+}
+
+.daily-details-grid {
+    font-size: 12px;
+    row-gap: 0;
+    column-gap: 15px;
+    display: grid;
+    flex: 1 1;
+    grid-template-columns: auto auto;
+    padding: 5px 15px;
+}
+
+.daily-details-grid-item {
+    align-items: center;
+    display: flex;
+    height: 30px;
+    justify-content: space-between;
+}
+
+.daily-details-grid-item label:first-child {
+    color: #50577A;
+}
+
+.daily-details-grid-item label:last-child {
+    color: #557153;
+    ;
 }

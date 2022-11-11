@@ -1,8 +1,8 @@
 body {
     padding: 0;
     margin: 0;
-    background: white;
-    background-image: url('https://img.freepik.com/free-vector/gorgeous-clouds-background-with-blue-sky-design_1017-25501.jpg?w=1060&t=st=1667721823~exp=1667722423~hmac=e7e04025d09749bf121d2fe407369bb173fdebba926d892de2ba1be2d19b96f1');
+    background: #757575;
+    background-image: url("../public/Assets/pic.jpg");
     background-repeat: no-repeat;
     height: max-content;
     background-size: cover;
